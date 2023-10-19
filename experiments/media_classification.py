@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import plot_confusion_matrix
+import sklearn
 import torch
 from transformer_model.evaluation import macro_f1, weighted_f1, print_stat
 from transformer_model.model_args import ClassificationArgs
@@ -66,7 +66,7 @@ predictions, raw_outputs = model.predict(test_sentences)
 test['predictions'] = predictions
 print_stat(test, 'labels', 'predictions')
 labels = list(set(test['labels'].to_list())).sort()
-plot_confusion_matrix(test['labels'].to_list(), predictions, labels=labels)
+sklearn.plot_confusion_matrix(test['labels'].to_list(), predictions, labels=labels)
 plt.savefig('media_classification_outputs/xlmroberta_large/plot.png')
 
 
