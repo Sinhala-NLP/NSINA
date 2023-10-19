@@ -2,6 +2,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import sklearn
 import torch
+
+from experiments.label_encoder import encode, decode
 from transformer_model.evaluation import macro_f1, weighted_f1, print_stat
 from transformer_model.model_args import ClassificationArgs
 from transformer_model.run_model import ClassificationModel
@@ -27,6 +29,7 @@ subsampled_df = subsampled_df.reset_index(drop=True)
 subsampled_df = subsampled_df.rename(columns={'News Content': 'text', 'Source': 'labels'}).dropna()
 
 subsampled_df = subsampled_df[["text", "labels"]]
+subsampled_df['labels'] = encode(subsampled_df["labels"])
 
 train, test = train_test_split(subsampled_df, test_size=0.2)
 
@@ -64,6 +67,10 @@ test_sentences = test['text'].tolist()
 predictions, raw_outputs = model.predict(test_sentences)
 
 test['predictions'] = predictions
+
+test['predictions'] = decode(test['predictions'])
+test['labels'] = decode(test['labels'])
+
 print_stat(test, 'labels', 'predictions')
 labels = list(set(test['labels'].to_list())).sort()
 sklearn.plot_confusion_matrix(test['labels'].to_list(), predictions, labels=labels)
