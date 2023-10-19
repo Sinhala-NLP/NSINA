@@ -44,7 +44,7 @@ model_args.output_dir = os.path.join("outputs", "xlmroberta")
 model_args.best_model_dir = os.path.join("outputs", "xlmroberta", "best_model")
 model_args.cache_dir = os.path.join("cache_dir", "xlmroberta")
 
-model_args.wandb_project = "DORE"
+model_args.wandb_project = "NSINa Caption Generation"
 model_args.wandb_kwargs = {"name": model_name}
 
 model = Seq2SeqModel(
