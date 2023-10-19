@@ -5,6 +5,7 @@ def merge_json_files(root_dir, output_file):
     merged_data = []
 
     for foldername, subfolders, filenames in os.walk(root_dir):
+        print(foldername)
         for filename in filenames:
             if filename.endswith('.json'):
                 file_path = os.path.join(foldername, filename)
