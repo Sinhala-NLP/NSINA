@@ -7,7 +7,7 @@ from transformer_model.model_args import ClassificationArgs
 from transformer_model.run_model import ClassificationModel
 import matplotlib.pyplot as plt
 
-full = pd.read_json("/content/drive/MyDrive/NSINa.json")
+full = pd.read_json("NSINa.json")
 
 # Number of samples to take from each category
 sample_size = 10000
