@@ -33,7 +33,7 @@ subsampled_df['labels'] = encode(subsampled_df["labels"])
 train, test = train_test_split(subsampled_df, test_size=0.2)
 
 model_args = ClassificationArgs()
-model_args.best_model_dir = "media_classification_outputs/xlmroberta/best_model"
+model_args.best_model_dir = "media_classification_outputs/sinbert/best_model"
 model_args.eval_batch_size = 16
 model_args.evaluate_during_training = True
 model_args.evaluate_during_training_steps = 1000
@@ -42,10 +42,10 @@ model_args.logging_steps = 1000
 model_args.learning_rate = 2e-5
 model_args.manual_seed = 777
 model_args.max_seq_length = 256
-model_args.model_type = "xlmroberta"
-model_args.model_name = "xlm-roberta-large"
+model_args.model_type = "roberta"
+model_args.model_name = "NLPC-UOM/SinBERT-large"
 model_args.num_train_epochs = 5
-model_args.output_dir = "media_classification_outputs/xlmroberta_large/"
+model_args.output_dir = "media_classification_outputs/sinbert/"
 model_args.overwrite_output_dir = True
 model_args.save_steps = 1000
 model_args.train_batch_size = 8
