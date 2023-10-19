@@ -122,7 +122,7 @@ class ModelArgs:
 
 
 @dataclass
-class LCPArgs(ModelArgs):
+class ClassificationArgs(ModelArgs):
     """
     Model args for MonoTransQuest Model
     """

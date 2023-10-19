@@ -53,7 +53,7 @@ from transformers.optimization import (
     get_polynomial_decay_schedule_with_warmup,
 )
 
-from transformer_model.model_args import LCPArgs
+from transformer_model.model_args import ClassificationArgs
 from transformer_model.models.bert_model import BertForSequenceClassification
 from transformer_model.models.distilbert_model import DistilBertForSequenceClassification
 from transformer_model.models.roberta_model import RobertaForSequenceClassification
@@ -72,7 +72,7 @@ except ImportError:
 logger = logging.getLogger(__name__)
 
 
-class LCPModel:
+class ClassificationModel:
     def __init__(
             self,
             model_type,
@@ -115,7 +115,7 @@ class LCPModel:
 
         if isinstance(args, dict):
             self.args.update_from_dict(args)
-        elif isinstance(args, LCPArgs):
+        elif isinstance(args, ClassificationArgs):
             self.args = args
 
         if self.args.thread_count:
@@ -1602,7 +1602,7 @@ class LCPModel:
         self.args.save(output_dir)
 
     def _load_model_args(self, input_dir):
-        args = LCPArgs()
+        args = ClassificationArgs()
         args.load(input_dir)
         return args
 
