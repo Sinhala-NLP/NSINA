@@ -9,7 +9,7 @@ def macro_f1(y_true, y_pred):
 def weighted_f1(y_true, y_pred):
     return f1_score(y_true, y_pred, average='weighted')
 
-def print_binary_stat(df, real_column, pred_column):
+def print_stat(df, real_column, pred_column):
     predictions = df[pred_column].tolist()
     real_values = df[real_column].tolist()
 
