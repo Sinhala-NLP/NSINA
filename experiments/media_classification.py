@@ -1,13 +1,12 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-import sklearn
 import torch
 
 from experiments.label_encoder import encode, decode
 from transformer_model.evaluation import macro_f1, weighted_f1, print_stat
 from transformer_model.model_args import ClassificationArgs
 from transformer_model.run_model import ClassificationModel
-import matplotlib.pyplot as plt
+
 
 full = pd.read_json("NSINa.json")
 
@@ -72,9 +71,7 @@ test['predictions'] = decode(test['predictions'])
 test['labels'] = decode(test['labels'])
 
 print_stat(test, 'labels', 'predictions')
-labels = list(set(test['labels'].to_list())).sort()
-sklearn.plot_confusion_matrix(test['labels'].to_list(), predictions, labels=labels)
-plt.savefig('media_classification_outputs/xlmroberta_large/plot.png')
+
 
 
 
