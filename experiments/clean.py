@@ -16,7 +16,7 @@ def merge_json_files(root_dir, output_file):
                     except json.JSONDecodeError:
                         print(f"Error reading file: {file_path}")
 
-    with open(output_file, 'w') as output_json:
+    with open(output_file, 'w', encoding='utf8') as output_json:
         json.dump(merged_data, output_json)
 
 if __name__ == "__main__":
