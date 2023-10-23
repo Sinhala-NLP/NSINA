@@ -20,7 +20,7 @@ full = full.rename(columns={'News Content': 'input_text', 'Headline': 'target_te
 full_train, test = train_test_split(full, test_size=0.2, random_state=SEED)
 
 model_args = Seq2SeqArgs()
-model_args.num_train_epochs = 5
+model_args.num_train_epochs = 10
 model_args.no_save = False
 model_args.fp16 = False
 model_args.learning_rate = 1e-5
