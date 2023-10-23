@@ -47,15 +47,15 @@ model_args.cache_dir = os.path.join("cache_dir", "mbart")
 model_args.wandb_project = "NSINa Caption Generation"
 model_args.wandb_kwargs = {"name": model_name}
 
-# model = Seq2SeqModel(
-#     encoder_decoder_type=model_type,
-#     encoder_decoder_name=model_name,
-#     args=model_args,
-#     use_cuda=torch.cuda.is_available()
-# )
-#
-# train, eval = train_test_split(full_train, test_size=0.2, random_state=SEED)
-# model.train_model(train, eval_data=eval)
+model = Seq2SeqModel(
+    encoder_decoder_type=model_type,
+    encoder_decoder_name=model_name,
+    args=model_args,
+    use_cuda=torch.cuda.is_available()
+)
+
+train, eval = train_test_split(full_train, test_size=0.2, random_state=SEED)
+model.train_model(train, eval_data=eval)
 
 input_list = test['input_text'].tolist()
 truth_list = test['target_text'].tolist()
