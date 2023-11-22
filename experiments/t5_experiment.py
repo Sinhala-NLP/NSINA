@@ -3,7 +3,8 @@ import os
 import pandas as pd
 import torch
 from sklearn.model_selection import train_test_split
-
+from datasets import Dataset
+from datasets import load_dataset
 from config.model_args import T5Args
 
 from t5.t5_model import T5Model
@@ -14,7 +15,7 @@ model_type = "t5"
 
 
 SEED = 777
-full = pd.read_json("NSINa.json")
+full = Dataset.to_pandas(load_dataset('sinhala-nlp/NSINA', split='train'))
 full["prefix"] = ""
 full = full.rename(columns={'News Content': 'input_text', 'Headline': 'target_text'})
 
