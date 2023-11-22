@@ -17,7 +17,7 @@ from torch.utils.tensorboard import SummaryWriter
 from tqdm.auto import tqdm, trange
 from transformers import ByT5Tokenizer
 from transformers import MT5Config, MT5ForConditionalGeneration
-from transformers import T5Config, T5ForConditionalGeneration, T5Tokenizer
+from transformers.models.t5 import T5Config, T5ForConditionalGeneration, T5Tokenizer
 from transformers.optimization import AdamW, Adafactor
 from transformers.optimization import (
     get_constant_schedule,
