@@ -15,9 +15,9 @@ from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from torch.utils.tensorboard import SummaryWriter
 from tqdm.auto import tqdm, trange
-from transformers.models.byt5 import ByT5Tokenizer
-from transformers.models.mt5 import MT5Config, MT5ForConditionalGeneration
-from transformers.models.t5 import T5Config, T5ForConditionalGeneration, T5Tokenizer
+from transformers import ByT5Tokenizer
+from transformers import MT5Config, MT5ForConditionalGeneration
+from transformers import T5Config, T5ForConditionalGeneration, T5Tokenizer
 from transformers.optimization import AdamW, Adafactor
 from transformers.optimization import (
     get_constant_schedule,
