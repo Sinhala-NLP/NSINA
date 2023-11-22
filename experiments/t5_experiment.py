@@ -10,7 +10,7 @@ from config.model_args import T5Args
 from t5.t5_model import T5Model
 from transformer_model.evaluation import bleu, ter
 
-model_name = "sinhala-nlp/sin-t5-oscar"
+model_name = "GermanT5/t5-base-german-3e"
 model_type = "t5"
 
 
