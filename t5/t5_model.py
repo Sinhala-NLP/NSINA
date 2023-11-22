@@ -124,7 +124,7 @@ class T5Model:
             self.model = model_class(config=self.config)
         else:
             self.config = config_class.from_pretrained(model_name, **self.args.config)
-            self.model = model_class.from_pretrained(model_name, config=self.config)
+            self.model = model_class.from_pretrained(model_name, config=self.config, from_flax=True)
 
         if isinstance(tokenizer, T5Tokenizer):
             self.tokenizer = tokenizer
