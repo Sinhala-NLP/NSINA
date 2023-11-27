@@ -52,6 +52,7 @@ class ModelArgs:
     evaluate_during_training_steps: int = 2000
     evaluate_during_training_verbose: bool = False
     evaluate_each_epoch: bool = True
+    flax_model: bool = False
     fp16: bool = True
     gradient_accumulation_steps: int = 1
     learning_rate: float = 4e-5

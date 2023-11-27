@@ -15,7 +15,7 @@ from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from torch.utils.tensorboard import SummaryWriter
 from tqdm.auto import tqdm, trange
-from transformers import ByT5Tokenizer
+from transformers import ByT5Tokenizer, AutoTokenizer
 from transformers import MT5Config, MT5ForConditionalGeneration
 from transformers.models.t5 import T5Config, T5ForConditionalGeneration, T5Tokenizer
 from transformers.optimization import AdamW, Adafactor
@@ -124,13 +124,15 @@ class T5Model:
             self.model = model_class(config=self.config)
         else:
             self.config = config_class.from_pretrained(model_name, **self.args.config)
-            self.model = model_class.from_pretrained(model_name, config=self.config, from_flax=True)
+            self.model = model_class.from_pretrained(model_name, config=self.config, from_flax=self.args.flax_model)
 
         if isinstance(tokenizer, T5Tokenizer):
             self.tokenizer = tokenizer
             self.model.resize_token_embeddings(len(self.tokenizer))
         elif model_type == "byt5":
             self.tokenizer = ByT5Tokenizer.from_pretrained(model_name, truncate=True)
+        elif self.args.flax_model:
+            self.tokenizer = AutoTokenizer.from_pretrained(model_name, truncate=True)
         else:
             self.tokenizer = T5Tokenizer.from_pretrained(model_name, truncate=True)
 

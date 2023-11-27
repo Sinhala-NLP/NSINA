@@ -24,6 +24,7 @@ full_train, test = train_test_split(full, test_size=0.2, random_state=SEED)
 model_args = T5Args()
 model_args.num_train_epochs = 5
 model_args.no_save = False
+model_args.flax_model = True
 model_args.fp16 = False
 model_args.learning_rate = 1e-4
 model_args.train_batch_size = 8
