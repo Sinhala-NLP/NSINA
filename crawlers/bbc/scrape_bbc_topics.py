@@ -136,11 +136,13 @@ def crawl_topics(page_number):
     print('started')
     if page_number == 1:
         # topic_url = 'https://www.bbc.com/sinhala/topics/cg7267dz901t'
-        topic_url = 'https://www.bbc.com/sinhala/topics/c83plvepnq1t'
+        # topic_url = 'https://www.bbc.com/sinhala/topics/c83plvepnq1t'
+        topic_url = 'https://www.bbc.com/sinhala/topics/c7zp5zxk8jxt'
     else:
         # topic_url = 'https://www.bbc.com/sinhala/topics/cg7267dz901t?page='+str(page_number)
         print('page_number = ',page_number)
-        topic_url = 'https://www.bbc.com/sinhala/topics/c83plvepnq1t?page=' + str(page_number)
+        # topic_url = 'https://www.bbc.com/sinhala/topics/c83plvepnq1t?page=' + str(page_number)
+        topic_url = 'https://www.bbc.com/sinhala/topics/c7zp5zxk8jxt?page=' + str(page_number)
     req = Request(
         topic_url,
         data=None,
@@ -170,6 +172,6 @@ def crawl_topics(page_number):
     except:
         pass
 
-
-for p in range(1, 41):
+# p = page number
+for p in range(1, 5):
     crawl_topics(p)

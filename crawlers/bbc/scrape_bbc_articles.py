@@ -10,7 +10,7 @@ with open("status.json", "r") as jsonFile:
 
 
 print('started')
-base_url = 'https://www.bbc.com/sinhala/world-67863396'
+base_url = 'https://www.bbc.com/sinhala/articles/clkwd87pv9go'
 
 
 def crawl_ur_ls(all_urls, current_url):
