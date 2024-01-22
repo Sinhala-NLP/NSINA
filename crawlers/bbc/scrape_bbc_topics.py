@@ -42,8 +42,10 @@ def crawl_ur_ls(all_urls, current_url):
         if all_hrefs:
             for href in all_hrefs:
                 if 'articles' in href["href"]:
-                    full_url = 'https://www.bbc.com/' + href["href"]
-                    if full_url not in all_urls:
+                    full_url = None
+                    if 'https://www.bbc.com/' not in href["href"]:
+                        full_url = 'https://www.bbc.com/' + href["href"]
+                    if full_url and full_url not in all_urls:
                         all_urls.append(full_url)
 
         if news_item is not None and bool(news_item):
@@ -113,6 +115,7 @@ def crawl_ur_ls(all_urls, current_url):
                     json.dump(status, jsonFile)
 
     except:
+        print('except 2', current_url)
         pass
 
     time.sleep(2)
@@ -170,8 +173,9 @@ def crawl_topics(page_number):
 
 
     except:
+        print('except 1',topic_url)
         pass
 
 # p = page number
-for p in range(1, 5):
+for p in range(1, 40):
     crawl_topics(p)
