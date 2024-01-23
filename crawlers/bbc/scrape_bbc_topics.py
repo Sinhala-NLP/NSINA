@@ -41,7 +41,7 @@ def crawl_ur_ls(all_urls, current_url):
         all_hrefs = news_item.findAll("a")
         if all_hrefs:
             for href in all_hrefs:
-                if 'articles' in href["href"]:
+                if 'articles' in href["href"] or 'sri-lanka' in href["href"] or 'world' in href["href"]:
                     full_url = None
                     if 'https://www.bbc.com/' not in href["href"]:
                         full_url = 'https://www.bbc.com/' + href["href"]

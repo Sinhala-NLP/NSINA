@@ -10,7 +10,7 @@ with open("status.json", "r") as jsonFile:
 
 
 print('started')
-base_url = 'https://www.bbc.com/sinhala/articles/clkwd87pv9go'
+base_url = 'https://www.bbc.com/sinhala/sri-lanka-49070422'
 
 
 def crawl_ur_ls(all_urls, current_url):
@@ -45,7 +45,7 @@ def crawl_ur_ls(all_urls, current_url):
         all_hrefs = news_item.findAll("a")
         if all_hrefs:
             for href in all_hrefs:
-                if 'articles' in href["href"]:
+                if 'articles' in href["href"] or 'sri-lanka' in href["href"] or 'world' in href["href"]:
                     full_url = 'https://www.bbc.com/' + href["href"]
                     if full_url not in all_urls:
                         all_urls.append(full_url)
