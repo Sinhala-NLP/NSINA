@@ -1,4 +1,4 @@
-from datetime import timedelta, date
+# this crawls articles starting from a topic page like ශ්‍රී ලංකා, කලා, etc.
 from urllib.request import urlopen as uReq
 from urllib.request import Request
 from bs4 import BeautifulSoup as soup

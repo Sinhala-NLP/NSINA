@@ -1,4 +1,4 @@
-from datetime import timedelta, date
+# this crawls articles starting from one article
 from urllib.request import urlopen as uReq
 from urllib.request import Request
 from bs4 import BeautifulSoup as soup
