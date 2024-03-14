@@ -8,21 +8,35 @@ For version 1.0, we collected news articles from 10 news media sites in Sri Lank
 
 |     Source        |  Amount  |
 |-------------------|----------|
-| Adaderana         |  83918   |
-| ITN News          |  30777   |
-| Lankatruth        |  48180   |
-| Divaina           |  26043   |
-| Hiru News         | 130729   |
-| Sinhala News LK   |  20371   |
-| Lankadeepa        | 141663   |
-| Vikalpa           |  14309   |
-| Dinamina          |   7642   |
-| Siyatha           |   3300   |
+| Adaderana  *( <https://sinhala.adaderana.lk/> )*       |  83918   |
+| ITN News  *( <https://www.itnnews.lk/> )*       |  30777   |
+| Lankatruth  *( <https://lankatruth.com/si/> )*        |  48180   |
+| Divaina   *( <https://divaina.lk/> )*         |  26043   |
+| Hiru News  *( <https://www.hirunews.lk/> )*        | 130729   |
+| Sinhala News LK *( <https://sinhala.news.lk/> )*   |  20371   |
+| Lankadeepa  *( <https://www.lankadeepa.lk/> )*       | 141663   |
+| Vikalpa   *( <https://www.vikalpa.org/> )*         |  14309   |
+| Dinamina   *( <https://www.dinamina.lk/> )*        |   7642   |
+| Siyatha  *( <https://siyathanews.lk/> )*          |   3300   |
 | **Total**         | **506932** |
+
+One of the .json files is shown below. 
+
+```json
+{
+       "Source": "hirunews",
+       "Timestamp": "Saturday, 02 May 2020 - 7:38",
+       "Headline": "ශ්‍රී ලංකා එංගලන්ත ක්‍රිකට් තරගාවලියට නව කාලසටහනක්",
+       "News Content": "කොවිඩ් -19 ගෝලීය වසංගතය හේතුවෙන් අතරමඟ දී අත්හිටුවනු ලැබූ එංගලන්ත ක්‍රිකට් පිළේ ශ්‍රී ලංකා සංචාරය සඳහා නව කාලසටහනක් සකස් කර තිබෙනවා. ඒ අනුව ලබන වසරේ ජනවාරි මාසයේ  එංගලන්ත පිළ නැවතත් ශ්‍රී ලංකාවට පැමිණීමට නියමිත බවයි ශ්‍රී ලංකා ක්‍රිකට් ප්‍රධාන විධායක ඈෂ්ලි ද සිල්වා ප්‍රකාශ කළේ. පසුගිය මාර්තු මාසයේ දිවයිනට පැමිණි එංගලන්ත කණ්ඩායම කොරෝනා වෛරස් ගෝලීය වසංගතය හේතුවෙන් දින 10කට පසු යළි සිය රට බලා නික්මුණේ පළමු ටෙස්ට් තරඟය ආරම්භවීමට සතියක් තිබියදියි.",
+       "URL": "https://www.hirunews.lk/sports/239889/ශ්‍රී-ලංකා-එංගලන්ත-ක්‍රිකට්-තරගාවලියට-නව-කාලසටහනක්",
+       "Category": "Sports",
+       "Parent URL": "https://www.hirunews.lk/sports/all-news.php?pageID=100"
+}
+```
 
 
 ## Data
-**NSINA** is available in [HuggingFace](https://huggingface.co/datasets/sinhala-nlp/NSINA) and can be downloaded using the following code. 
+All the .json files mentioned about were concatenated to create the final dataset. **NSINA** is available in [HuggingFace](https://huggingface.co/datasets/sinhala-nlp/NSINA) and can be downloaded using the following code. 
 
 ```python
 from datasets import Dataset
