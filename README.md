@@ -3,7 +3,7 @@
 # NSINa - A {N}ews Corpus for {Sin}hal{a}
 This repository introduces **NSINA**, a comprehensive news corpus of over 500,000 articles from popular Sinhala news websites. Alongside **NSINA**, with different subsets, we also introduce three Sinhala NLP tasks [(1) News Media Identification](https://github.com/Sinhala-NLP/Sinhala-News-Media-Identification) [(2) News Category Prediction](https://github.com/Sinhala-NLP/Sinhala-News-Category-Prediction) and [(3) News Headline Generation](https://github.com/Sinhala-NLP/Sinhala-Headline-Generation). The release of **NSINA** aims to provide a solution to challenges in adapting large language models to Sinhala, offering valuable benchmarks and resources for improving NLP in the Sinhala language. **NSINA** is the largest news corpus for Sinhala. 
 
-# Data
+## Data
 **NSINA** is available in [HuggingFace](https://huggingface.co/datasets/sinhala-nlp/NSINA) and can be downloaded using the following code. 
 
 ```python
