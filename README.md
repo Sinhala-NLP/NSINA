@@ -5,6 +5,26 @@ This repository introduces **NSINA**, a comprehensive news corpus of over 500,00
 
 ## Data Collection
 
+For **version 2.0**, we collected news articles from 14 news media sites in Sri Lanka. The following table has the details. 
+
+|     Source        |  Amount  |
+|-------------------|----------|
+| Adaderana  *( <https://sinhala.adaderana.lk/> )*       |  83918   |
+| Ada  *( <https://www.ada.lk/> )*       |  51930   |
+| BBC  *( <https://www.bbc.com/sinhala> )*       |  8011   |
+| Gossip Lanka  *( <https://www.gossiplankanews.com/> )*       |  4441   |
+| ITN News  *( <https://www.itnnews.lk/> )*       |  30777   |
+| Lankatruth  *( <https://lankatruth.com/si/> )*        |  48180   |
+| Divaina   *( <https://divaina.lk/> )*         |  26043   |
+| Hiru News  *( <https://www.hirunews.lk/> )*        | 130729   |
+| Sinhala News LK *( <https://sinhala.news.lk/> )*   |  20371   |
+| Lankadeepa  *( <https://www.lankadeepa.lk/> )*       | 141663   |
+| Vikalpa   *( <https://www.vikalpa.org/> )*         |  14309   |
+| Dinamina   *( <https://www.dinamina.lk/> )*        |   7642   |
+| Siyatha  *( <https://siyathanews.lk/> )*          |   3300   |
+| Silumina  *( <https://www.silumina.lk/> )*          |   40688   |
+| **Total**         | **612,002** |
+
 For **version 1.0**, we collected news articles from ten news media sites in Sri Lanka. The following table has the details. 
 
 |     Source        |  Amount  |
@@ -37,6 +57,17 @@ One of the .json files is shown below.
 
 
 ## Data
+
+**Version 2.0**
+
+```python
+from datasets import Dataset
+from datasets import load_dataset
+
+nsina = Dataset.to_pandas(load_dataset('sinhala-nlp/NSINA_2.0', split='train'))
+```
+
+**Version 1.0**
 All the .json files mentioned above were concatenated to create the final dataset. **NSINA** is available in [HuggingFace](https://huggingface.co/datasets/sinhala-nlp/NSINA) and can be downloaded using the following code. 
 
 ```python
