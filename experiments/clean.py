@@ -1,6 +1,7 @@
 import os
 import json
 import codecs
+import pandas as pd
 
 def merge_json_files(root_dir, output_file):
     merged_data = []
