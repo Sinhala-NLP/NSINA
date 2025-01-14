@@ -20,8 +20,21 @@ def merge_json_files(root_dir, output_file):
     with codecs.open(output_file, 'w', encoding='utf-8') as output_json:
         json.dump(merged_data, output_json, ensure_ascii=False)
 
+def json_to_tsv(input_file, output_file):
+    # Load the JSON file
+    with codecs.open(input_file, 'r', encoding='utf-8') as json_file:
+        data = json.load(json_file)
+
+    # Convert JSON to a pandas DataFrame
+    df = pd.json_normalize(data)
+
+    # Save DataFrame to a tab-separated CSV
+    df.to_csv(output_file, sep='\t', index=False)
+
 if __name__ == "__main__":
     root_directory = "data/"  # Change this to the directory where your JSON files are located
     output_filename = "merged.json"  # Change this to your desired output filename
-
+    tsv_output_filename = "merged.csv"  # Output TSV filename
+    
     merge_json_files(root_directory, output_filename)
+    json_to_tsv(json_output_filename, tsv_output_filename)
