@@ -28,7 +28,7 @@ def json_to_tsv(input_file, output_file):
 
     # Convert JSON to a pandas DataFrame
     df = pd.json_normalize(data)
-    df = df ["Headline", "Source", "Timestamp", "News Content", "Parent URL", "URL", "Category"]
+    df = df[["Headline", "Source", "Timestamp", "News Content", "Parent URL", "URL", "Category"]]
 
     # Save DataFrame to a tab-separated CSV
     df.to_csv(output_file, sep='\t', index=False)
