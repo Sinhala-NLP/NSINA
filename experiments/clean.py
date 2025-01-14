@@ -37,4 +37,4 @@ if __name__ == "__main__":
     tsv_output_filename = "merged.csv"  # Output TSV filename
     
     merge_json_files(root_directory, output_filename)
-    json_to_tsv(json_output_filename, tsv_output_filename)
+    json_to_tsv(output_filename , tsv_output_filename)
